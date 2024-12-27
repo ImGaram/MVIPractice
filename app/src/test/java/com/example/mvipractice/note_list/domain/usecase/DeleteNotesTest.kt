@@ -3,7 +3,6 @@ package com.example.mvipractice.note_list.domain.usecase
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.mvipractice.core.data.repository.FakeNoteRepository
 import com.example.mvipractice.core.domain.model.NoteItem
-import com.example.mvipractice.noet_list.domain.usecase.DeleteNotes
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.test.runTest
 import org.junit.Before

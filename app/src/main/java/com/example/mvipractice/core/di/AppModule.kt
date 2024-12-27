@@ -5,8 +5,8 @@ import androidx.room.Room
 import com.example.mvipractice.core.data.local.NoteDb
 import com.example.mvipractice.core.data.repository.NoteRepositoryImpl
 import com.example.mvipractice.core.domain.repository.NoteRepository
-import com.example.mvipractice.noet_list.domain.usecase.DeleteNotes
-import com.example.mvipractice.noet_list.domain.usecase.GetAllNotes
+import com.example.mvipractice.note_list.domain.usecase.DeleteNotes
+import com.example.mvipractice.note_list.domain.usecase.GetAllNotes
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

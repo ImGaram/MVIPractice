@@ -1,4 +1,4 @@
-package com.example.mvipractice.noet_list.domain.usecase
+package com.example.mvipractice.note_list.domain.usecase
 
 import com.example.mvipractice.core.domain.model.NoteItem
 import com.example.mvipractice.core.domain.repository.NoteRepository
