@@ -3,7 +3,7 @@ package com.example.mvipractice.core.data.repository
 import com.example.mvipractice.core.domain.model.NoteItem
 import com.example.mvipractice.core.domain.repository.NoteRepository
 
-class FakeNoteRepository: NoteRepository {
+class FakeAndroidNoteRepository: NoteRepository {
 
     private var noteItems = mutableListOf<NoteItem>()
 
