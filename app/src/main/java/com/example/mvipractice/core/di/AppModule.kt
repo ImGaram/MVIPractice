@@ -2,10 +2,13 @@ package com.example.mvipractice.core.di
 
 import android.app.Application
 import androidx.room.Room
+import com.example.mvipractice.add_note.domain.usecase.SearchImages
 import com.example.mvipractice.add_note.domain.usecase.UpsertNote
 import com.example.mvipractice.core.data.local.NoteDb
 import com.example.mvipractice.core.data.remote.api.ImagesApi
+import com.example.mvipractice.core.data.repository.ImagesRepositoryImpl
 import com.example.mvipractice.core.data.repository.NoteRepositoryImpl
+import com.example.mvipractice.core.domain.repository.ImagesRepository
 import com.example.mvipractice.core.domain.repository.NoteRepository
 import com.example.mvipractice.note_list.domain.usecase.DeleteNotes
 import com.example.mvipractice.note_list.domain.usecase.GetAllNotes
@@ -63,5 +66,17 @@ object AppModule {
             .baseUrl(ImagesApi.BASE_URL)
             .build()
             .create(ImagesApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideImagesRepository(imagesApi: ImagesApi): ImagesRepository {
+        return ImagesRepositoryImpl(imagesApi)
+    }
+
+    @Provides
+    @Singleton
+    fun provideSearchImagesUseCase(imagesRepository: ImagesRepository): SearchImages {
+        return SearchImages(imagesRepository)
     }
 }
