@@ -5,6 +5,6 @@ import com.example.mvipractice.core.domain.model.Images
 
 fun ImageListDTO.toImages(): Images {
     return Images(
-        images = hits?.map { it.imageURL ?: "" } ?: emptyList()
+        images = hits?.map { it.previewURL ?: "" } ?: emptyList()
     )
 }
