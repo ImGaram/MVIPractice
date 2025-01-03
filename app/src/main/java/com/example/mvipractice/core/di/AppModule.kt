@@ -2,6 +2,7 @@ package com.example.mvipractice.core.di
 
 import android.app.Application
 import androidx.room.Room
+import com.example.mvipractice.add_note.domain.usecase.UpsertNote
 import com.example.mvipractice.core.data.local.NoteDb
 import com.example.mvipractice.core.data.repository.NoteRepositoryImpl
 import com.example.mvipractice.core.domain.repository.NoteRepository
@@ -43,5 +44,11 @@ object AppModule {
     @Singleton
     fun provideDeleteNotesUseCase(noteRepository: NoteRepository): DeleteNotes {
         return DeleteNotes(noteRepository)
+    }
+
+    @Provides
+    @Singleton
+    fun provideUpsertNoteUseCase(noteRepository: NoteRepository): UpsertNote {
+        return UpsertNote(noteRepository)
     }
 }
