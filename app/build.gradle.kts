@@ -80,6 +80,7 @@ dependencies {
 
     // Coil
     implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
 
     // Extended Icons
     implementation(libs.androidx.material.icons.extended)
