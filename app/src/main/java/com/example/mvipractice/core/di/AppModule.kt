@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.room.Room
 import com.example.mvipractice.add_note.domain.usecase.UpsertNote
 import com.example.mvipractice.core.data.local.NoteDb
+import com.example.mvipractice.core.data.remote.api.ImagesApi
 import com.example.mvipractice.core.data.repository.NoteRepositoryImpl
 import com.example.mvipractice.core.domain.repository.NoteRepository
 import com.example.mvipractice.note_list.domain.usecase.DeleteNotes
@@ -12,6 +13,8 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
@@ -50,5 +53,15 @@ object AppModule {
     @Singleton
     fun provideUpsertNoteUseCase(noteRepository: NoteRepository): UpsertNote {
         return UpsertNote(noteRepository)
+    }
+
+    @Provides
+    @Singleton
+    fun provideImagesApi(): ImagesApi {
+        return Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(ImagesApi.BASE_URL)
+            .build()
+            .create(ImagesApi::class.java)
     }
 }
