@@ -8,6 +8,6 @@ sealed interface AddNoteActions {
     data class UpdateSearchImageQuery(val newQuery: String): AddNoteActions
     data class PickImage(val imageUrl: String): AddNoteActions
 
-    data object UpdateImageDialogVisibility: AddNoteActions
+    data object UpdateImagesDialogVisibility: AddNoteActions
     data object SaveNote: AddNoteActions
 }
