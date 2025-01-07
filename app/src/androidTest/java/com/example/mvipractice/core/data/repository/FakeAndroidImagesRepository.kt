@@ -14,7 +14,7 @@ class FakeAndroidImagesRepository: ImagesRepository {
         return if (shouldReturnError) {
             null
         } else {
-            Images(images = listOf("image1", "image2", "image3", "image4"))
+            Images(images = listOf("image1", "image2", "image3", "image4", "image5", "image6"))
         }
     }
 }
